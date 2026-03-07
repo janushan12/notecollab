@@ -1,8 +1,8 @@
 const express= require("express");
-const { protect } = require("../middleware/auth");
 const router = express.Router();
 const Note = require('../models/Note')
 const User = require('../models/User')
+const { protect } = require("../middleware/auth");
 
 router.use(protect);
 

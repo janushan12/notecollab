@@ -9,6 +9,10 @@ const userRoutes = require('./routes/users');
 
 const app = express();
 
+app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+app.use(express.json());        // ← THIS parses JSON request bodies
+app.use(express.urlencoded({ extended: true })); // ← ADD THIS too
+
 app.use('/api/auth', authRoutes);
 app.use('/api/notes', noteRoutes);
 app.use('/api/users', userRoutes);
